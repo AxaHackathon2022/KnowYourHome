@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-}
+  color: #282c34;}
 
 .App-logo {
   height: 40vmin;
@@ -19,9 +19,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   font-size: calc(10px + 1vmin);
-  color: #282c34;
+
 }
 
 .App-link {

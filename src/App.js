@@ -4,13 +4,13 @@ import "./App.css";
 import Header from "./components/Header";
 import Card from "./components/UI/Card";
 import SearchFeature from "./components/Features/SearchFeature";
-import DisplayAdressFeature from "./components/Features/DisplayAdressFeature";
+import DisplayAddressFeature from "./components/Features/DisplayAddressFeature";
 
 function App() {
   const [searchLocation, setSearchLocation] = useState({});
 
-  const searchLocationHandler = (paramAdress, paramX, paramY) => {
-    setSearchLocation({ adress: paramAdress, locX: paramX, locY: paramY });
+  const searchLocationHandler = (paramAddress, paramX, paramY) => {
+    setSearchLocation({ address: paramAddress, locX: paramX, locY: paramY });
   };
 
   return (
@@ -21,7 +21,7 @@ function App() {
           currentLocation={searchLocation}
           onSearchLocation={searchLocationHandler}
         />
-        <DisplayAdressFeature 
+        <DisplayAddressFeature 
           currentLocation={searchLocation}
         />
         <Card>
