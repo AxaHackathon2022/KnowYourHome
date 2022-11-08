@@ -1,3 +1,48 @@
+# Know your Home
+
+## Themensammlung Know your home
+
+[Geodaten](https://www.geo.admin.ch/de/geo-dienstleistungen/geodienste/downloadienste/stac-api.html)<br>
+[Kataster Pläne](https://www.cadastre.ch/de/services/service/ws-rdppf.html)<br>
+[Gebäudeinformationen](https://www.housing-stat.ch/de/docs/levels.html)
+
+
+### Kartenviewer:
+[SwissTopo](https://www.swisstopo.admin.ch/de/home.html/)
+[SwissTopo OnlineTools](https://www.swisstopo.admin.ch/de/home/meta/angebot/online-tools.html)
+
+Kartenviewer (Kartenviewer einbinden)<br>
+-	Web Mapping Services
+-	Web Map Tiling Services
+-	GeoAdmin API’s documentation
+
+
+
+Eventuell wie ZürichVersicherung
+[Zuerich Versicherung](https://www.zurich.ch/de/services/naturgefahren/)
+
+Möglicher Datenbezug
+https://www.bafu.admin.ch/bafu/de/home/themen/naturgefahren/fachinformationen/naturgefahrensituation-und-raumnutzung/gefahrengrundlagen/gefahrenkarten--intensitaetskarten-und-gefahrenhinweiskarten.html
+
+Zusätzliche Daten Über Gebäude und Wohnung
+https://opendata.swiss/de/dataset/eidg-gebaude-und-wohnungsregister-gwr
+Verkehr:
+- Haltestellen
+https://opendata.swiss/de/dataset/haltestellen-des-offentlichen-verkehrs/resource/55728237-4604-4453-a6e1-39df8151e31f
+- Reisenzeit Farbliche Darstellung
+https://opendata.swiss/de/dataset/erreichbarkeit-mit-dem-offentlichen-verkehr-in-abhangigkeit-von-reisezeit-und-potenzial-am-ziel/resource/f80663d6-a036-4bf0-b676-8d7979b3ef56
+
+
+GitHub Link zu Niels’ Studienprojekt
+-	OpenStreetMap Points of Interest per https://overpass-turbo.eu/
+-	Nicht API, muss exportiert und als DB genutzt werden, aber sehr konfigurierbar auf Objekttypen
+
+Sample Google Streetview Projekt: 
+[gmap example (forked) - CodeSandbox](https://codesandbox.io/s/nx6fg?file=/src/map.js:0-27)
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
