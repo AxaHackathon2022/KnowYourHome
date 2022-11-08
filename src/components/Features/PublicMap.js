@@ -8,70 +8,78 @@ import {XYZ} from "ol/source";
 import classes from './PublicMap.module.css'
 
 class PublicMap extends Component {
-  constructor(props) {
-    super(props);
+    constructor(props) {
+        super(props);
 
-    //const map_types = [{"pixelkarte-farbe"}, {"pixelkarte-farbe-winter"}, {"swissimage"}, {"SWISSTLM3D_EISENBAHNNETZ"}, {"SEGELFLUGKARTE"}, {"SPERR_GEFAHRENZONENKARTE"}, {"HIKS_DUFOR"}, {"HIKS_SIEGFRIED"}]
+        this.state = {center: [8.733389, 47.500], zoom: 16};
 
-    this.getMap("swissimage")
-  }
+        this.olmap = new OlMap({
+            target: null,
+            loadTilesWhileAnimating: true,
+            layers: [
+                new OlLayerTile({
+                    source: new XYZ({
+                        url: 'https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/{z}/{x}/{y}.jpeg'
+                    })
+                }),
+            ],
+            view: new OlView({
+                center: fromLonLat(this.state.center),
+                zoom: this.state.zoom
+            })
+        });
+    }
 
-  getMap(map_type) {
-    this.state = {center: [8.733389, 47.5006875], zoom: 16};
+    updateMap() {
+        this.olmap.getView().setCenter(fromLonLat(this.state.center));
+        this.olmap.getView().setZoom(this.state.zoom);
+    }
 
-    this.olmap = new OlMap({
-      target: "map",
-      loadTilesWhileAnimating: true,
-      layers: [
-        new OlLayerTile({
-          source: new XYZ({
-            url: 'https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.' + map_type + '/default/current/3857/{z}/{x}/{y}.jpeg'
-            
-          })
-        })
-      ],
-      view: new OlView({
-        center: fromLonLat(this.state.center),
-        zoom: this.state.zoom
-      })
-    });
-  }
+    componentDidMount() {
+        this.olmap.setTarget("map");
 
-  updateMap() {
-    this.olmap.getView().setCenter(fromLonLat(this.state.center));
-    this.olmap.getView().setZoom(this.state.zoom);
-  }
+        // Listen to map changes
+        this.olmap.on("moveend", () => {
+            let center = this.olmap.getView().getCenter();
+            let zoom = this.olmap.getView().getZoom();
+            this.setState({center, zoom});
+        });
+    }
 
-  componentDidMount() {
-    this.olmap.setTarget("map");
+    shouldComponentUpdate(nextProps, nextState) {
+        let center = this.olmap.getView().getCenter();
+        let zoom = this.olmap.getView().getZoom();
+        if (center === nextState.center && zoom === nextState.zoom) return false;
+        return true;
+    }
 
-    // Listen to map changes
-    this.olmap.on("moveend", () => {
-      let center = this.olmap.getView().getCenter();
-      let zoom = this.olmap.getView().getZoom();
-      this.setState({ center, zoom });
-    });
-  }
+    userAction() {
+        this.setState({center: [8.733389, 47.500], zoom: 16});
+    }
+    addOneRemoveOther(layerName) {
+        this.olmap.getAllLayers().every(e => this.olmap.removeLayer(e));
+        this.olmap.addLayer(new OlLayerTile({
+            source: new XYZ({
+                url: `https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.${(layerName.toString())}/default/current/3857/{z}/{x}/{y}.jpeg`
+            })
+        }));
 
-  shouldComponentUpdate(nextProps, nextState) {
-    let center = this.olmap.getView().getCenter();
-    let zoom = this.olmap.getView().getZoom();
-    if (center === nextState.center && zoom === nextState.zoom) return false;
-    return true;
-  }
+    }
 
-  userAction() {
-    this.setState({ center: [8.733389, 47.500], zoom: 16 });
-  }
-
-  render() {
-    this.updateMap(); // Update map on render?
-    return (
-      <div id="map" className={classes.displayMap}>
-       
-      </div>
-    );
-  }
+    render() {
+        this.updateMap(); // Update map on render?
+        return (
+            <div>
+                <button onClick={e => this.addOneRemoveOther("pixelkarte-farbe")}>Karte</button>
+                <button onClick={e => this.addOneRemoveOther("swissimage")}>Satellit</button>
+                <button onClick={e => this.addOneRemoveOther("pixelkarte-farbe-winter")}>pixelkarte-farbe-winter</button>
+                <button onClick={e => this.addOneRemoveOther("pixelkarte-grau")}>pixelkarte-grau</button>
+                <div id="map" className={classes.displayMap}>
+                    <button onClick={e => this.userAction()}>Jump back</button>
+                </div>
+            </div>
+        );
+    }
 }
 
 export default PublicMap;
