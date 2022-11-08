@@ -1,24 +1,11 @@
-.displayMap div {
-    font: inherit;
-    color: inherit;
-    display: inline-flex;
-    margin: 0;
+.displayMap {
+    align-content: center;
     width: 80%;
-    height: 1000px;
+    height: 500px;
 }
 
-.buttons div {
-    font: inherit;
-    color: inherit;
-    display: inline-flex;
-    margin: 0;
+.buttons {
+    align-content: center;
     width: 100%;
-    height: 100px;
+    height: 550px;
 }
-
-.buttons button {
-    font: inherit;
-    color: inherit;
-    
-}
-

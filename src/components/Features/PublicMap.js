@@ -4,8 +4,6 @@ import OlView from "ol/View";
 import OlLayerTile from "ol/layer/Tile";
 import {fromLonLat} from "ol/proj";
 import {XYZ} from "ol/source";
-import {defaults as defaultInteractions} from 'ol/interaction';
-
 import classes from './PublicMap.module.css'
 
 
@@ -25,15 +23,7 @@ class PublicMap extends Component {
                     })
                 }),
             ],
-            interactions: defaultInteractions({
-              doubleClickZoom: false,    
-              dragAndDrop: false,    
-              dragPan: false,    
-              keyboardPan: false,   
-              keyboardZoom: false,    
-              mouseWheelZoom: false,    
-              pointer: false,    
-              select: false}),          
+            controls: [],
             view: new OlView({
                 center: fromLonLat(this.state.center),
                 zoom: this.state.zoom
@@ -41,21 +31,10 @@ class PublicMap extends Component {
         });
     }
 
-    deactivateControl(item) {
-      //item.deactivate();
-      //console.log(item)
-    }
-
     updateMap() {
         this.olmap.getView().setCenter(fromLonLat(this.state.center));
         this.olmap.getView().setZoom(this.state.zoom);
-        this.olmap.getControls().forEach(element => {
-          this.deactivateControl(element)
-        });
     }
-
-    
-
 
     componentDidMount() {
         this.olmap.setTarget("map");
