@@ -10,8 +10,8 @@ import MyMap from "./components/Features/PublicMap";
 function App() {
   const [searchLocation, setSearchLocation] = useState({});
 
-  const searchLocationHandler = (paramAddress, paramX, paramY) => {
-    setSearchLocation({ address: paramAddress, locX: paramX, locY: paramY });
+  const searchLocationHandler = (paramAddress, paramLat, paramLon) => {
+    setSearchLocation({ address: paramAddress, lat: paramLat, lon: paramLon });
   };
 
   return (
@@ -26,7 +26,7 @@ function App() {
           currentLocation={searchLocation}
         />
         <Card>
-          <MyMap />
+          <MyMap posLng={searchLocation.lon} posLat={searchLocation.lat}/>
         </Card>
       </div>
     </div>

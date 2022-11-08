@@ -3,6 +3,22 @@
     color: inherit;
     display: inline-flex;
     margin: 0;
-    width: 100%;
-    height: 500px;
+    width: 80%;
+    height: 1000px;
 }
+
+.buttons div {
+    font: inherit;
+    color: inherit;
+    display: inline-flex;
+    margin: 0;
+    width: 100%;
+    height: 100px;
+}
+
+.buttons button {
+    font: inherit;
+    color: inherit;
+    
+}
+

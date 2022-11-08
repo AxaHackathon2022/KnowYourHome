@@ -9,8 +9,8 @@ function DisplayAddressFeature(props) {
         <>
         {(props.currentLocation.address ) && (<Card className={classes.displayAddress}>
             <p>Address: {props.currentLocation.address}&nbsp;</p>
-            <p>(X: {props.currentLocation.locX},&nbsp;</p>
-            <p>Y: {props.currentLocation.locY})</p>
+            <p>(Lat: {props.currentLocation.lat},&nbsp;</p>
+            <p>Lon: {props.currentLocation.lon})</p>
         </Card>)}
         </>
     );
