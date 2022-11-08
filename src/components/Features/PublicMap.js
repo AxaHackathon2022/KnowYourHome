@@ -13,7 +13,7 @@ class PublicMap extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {center: [8.733389, 47.500], zoom: 16};
+        this.state = {center: [this.props.posLng, this.props.posLat], zoom: 16};
 
         this.olmap = new OlMap({
             target: null,
@@ -76,7 +76,7 @@ class PublicMap extends Component {
     }
 
     userAction() {
-        this.setState({center: [8.733389, 47.500], zoom: 16});
+        this.setState({center: [this.props.posLng, this.props.posLat], zoom: 16});
     }
     addOneRemoveOther(layerName) {
         this.olmap.getAllLayers().every(e => this.olmap.removeLayer(e));
