@@ -4,6 +4,11 @@
   border-radius: 1rem;
   padding: 1.5rem;
   width: calc(100% - 5rem);
+  height: 100%;
   max-width: 80%;
   margin: 2rem 2rem 0 2rem;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: no-wrap;
 }

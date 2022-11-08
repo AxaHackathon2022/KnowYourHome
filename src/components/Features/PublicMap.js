@@ -13,14 +13,14 @@ class PublicMap extends Component {
         super(props);
 
         this.state = {center: [this.props.posLng, this.props.posLat], zoom: 16};
-
+        
         this.olmap = new OlMap({
             target: null,
             loadTilesWhileAnimating: true,
             layers: [
                 new OlLayerTile({
                     source: new XYZ({
-                        url: 'https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/{z}/{x}/{y}.jpeg'
+                        url: 'https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.swissimage/default/current/3857/{z}/{x}/{y}.jpeg'
                     })
                 }),
             ],
@@ -39,7 +39,7 @@ class PublicMap extends Component {
 
     componentDidMount() {
         this.olmap.setTarget("map");
-
+        
         // Listen to map changes
         this.olmap.on("moveend", () => {
             let center = this.olmap.getView().getCenter();
@@ -72,15 +72,14 @@ class PublicMap extends Component {
         this.updateMap(); // Update map on render?
         return (
             <Card>
-                <div className={classes.buttons}>
-                    <button onClick={e => this.addOneRemoveOther("pixelkarte-farbe")}>Karte</button>
-                    <button onClick={e => this.addOneRemoveOther("swissimage")}>Satellit</button>
-                    <button onClick={e => this.addOneRemoveOther("pixelkarte-farbe-winter")}>pixelkarte-farbe-winter
-                    </button>
-                    <button onClick={e => this.addOneRemoveOther("pixelkarte-grau")}>pixelkarte-grau</button>
+                <div className={classes.buttonsDiv}>
+                    <button className={classes.button} onClick={e => this.addOneRemoveOther("pixelkarte-farbe")}>Strassenkarte</button>
+                    <button className={classes.button} onClick={e => this.addOneRemoveOther("swissimage")}>Satellit</button>
+                    <button className={classes.button} onClick={e => this.addOneRemoveOther("pixelkarte-farbe-winter")}>Strassenkarte hell</button>
+                    <button className={classes.button} onClick={e => this.addOneRemoveOther("pixelkarte-grau")}>Strassenkarte grau</button>
                 </div>
                 <div id="map" className={classes.displayMap}>
-                    <button onClick={e => this.userAction()}>Jump back</button>
+                    <button className={classes.button} onClick={e => this.userAction()}>Jump back</button>
                 </div>
             </Card>
     )
