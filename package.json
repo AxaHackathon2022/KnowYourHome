@@ -31,6 +31,8 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "babel-eslint": "^6.1.2"
+    "babel-eslint": "^6.1.2",
+    "case-sensitive-paths-webpack-plugin": "^2.4.0",
+    "ol": "^7.1.0"
   }
 }
