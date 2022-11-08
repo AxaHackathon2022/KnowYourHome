@@ -78,9 +78,9 @@ class PublicMap extends Component {
                     <button className={classes.button} onClick={e => this.addOneRemoveOther("pixelkarte-farbe-winter")}>Strassenkarte hell</button>
                     <button className={classes.button} onClick={e => this.addOneRemoveOther("pixelkarte-grau")}>Strassenkarte grau</button>
                 </div>
-                <div id="map" className={classes.displayMap}>
-                    <button className={classes.button} onClick={e => this.userAction()}>Jump back</button>
-                </div>
+                <button className={classes.button} onClick={e => this.userAction()}>Neu zentrieren</button>
+                <div id="map" className={classes.displayMap}/>
+                
             </Card>
     )
         ;
