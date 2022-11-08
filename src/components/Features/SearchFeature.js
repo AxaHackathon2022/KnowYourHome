@@ -8,7 +8,7 @@ function SearchFeature(props) {
   
   function GetLocation(inputLocation){
     //TODO: Adress/Location search
-    return {locAdress: inputLocation, locX: 0.0, locY: 0.0};
+    return {locAdress: inputLocation, locX: 47.5006875, locY: 8.733389};
   };
 
   const onSubmitHandler = (event) => {
