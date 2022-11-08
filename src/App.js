@@ -38,7 +38,6 @@ function App() {
             Learn React
           </a>
         </Card>
-        <Card><p>Test Änderung</p></Card>
       </div>
     </div>
   );
