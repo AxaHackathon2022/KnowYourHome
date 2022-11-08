@@ -8,20 +8,20 @@ function SearchFeature(props) {
   const [locationObject, setLocationObject] = useState({});
 
   async function fetchAddress(inputValue) {
-    //TODO: Daten aus Input auf Search-Call mappen
-    const response = await fetch("https://api3.geo.admin.ch/rest/services/api/MapServer/find?layer=ch.bfs.gebaeude_wohnungs_register&searchText=2323872&searchField=egid&returnGeometry=false&contains=false");
-    const fetchedResponse = await response.json(response);
-    //TODO: Koordinaten 
-    setLocationObject({ inputLocation: { locAddress: inputValue, locX: 47.5006875, locY: 8.733389 }, fetch: fetchedResponse.results[0].attributes });
+    if (inputValue) {
+      const str = inputValue.split(' ').join('+');
+      const response = await fetch(`https://maps.google.com/maps/api/geocode/json?address=${str}&key=AIzaSyCzSfrU0mR4BDwWARDNFZaSugM5bzVhdjU`);
+      const fetchedResponse = await response.json(response);
+      console.log(fetchedResponse);
+      setLocationObject(fetchedResponse.results);
+    };
   };
 
   useEffect(() => {
     console.log(locationObject);
-
-    console.log(locationObject);
-    if (locationObject.inputLocation) {
-      const addressString = locationObject.fetch.strname_deinr + ", " + locationObject.fetch.dplz4 + " " + locationObject.fetch.ggdename;
-      props.onSearchLocation(addressString, locationObject.inputLocation.locX, locationObject.inputLocation.locY);
+    if (locationObject && locationObject.length === 1) {
+      const resultAddress = locationObject[0];
+      props.onSearchLocation(resultAddress.formatted_address, resultAddress.geometry.location.lat, resultAddress.geometry.location.lng);
     };
 
   }, [locationObject]);
