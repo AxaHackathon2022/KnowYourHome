@@ -11,10 +11,10 @@
 [SwissTopo](https://www.swisstopo.admin.ch/de/home.html/)
 [SwissTopo OnlineTools](https://www.swisstopo.admin.ch/de/home/meta/angebot/online-tools.html)
 
-Kartenviewer (Kartenviewer einbinden)<br>
--	Web Mapping Services
--	Web Map Tiling Services
--	GeoAdmin API’s documentation
+Kartenviewer [https://help.geo.admin.ch/?ids=52&lang=de](Kartenviewer einbinden)<br>
+-	[https://www.geo.admin.ch/de/geo-dienstleistungen/geodienste/darstellungsdienste-webmapping-webgis-anwendungen/web-map-services-wms.html](Web Mapping Services)
+-	[https://www.geo.admin.ch/de/geo-dienstleistungen/geodienste/darstellungsdienste-webmapping-webgis-anwendungen/web-map-tiling-services-wmts.html](Web Map Tiling Services)
+-	[https://api3.geo.admin.ch/index.html](GeoAdmin API’s documentation)
 
 
 
