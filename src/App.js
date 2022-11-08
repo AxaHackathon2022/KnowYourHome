@@ -26,7 +26,7 @@ function App() {
           currentLocation={searchLocation}
         />
         <Card>
-          <MyMap posLng={'8.733389'} posLat={'47.500'}/>
+          <MyMap posLng={searchLocation.lon} posLat={searchLocation.lat}/>
         </Card>
       </div>
     </div>
