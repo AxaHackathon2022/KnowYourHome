@@ -5,21 +5,28 @@ import OlLayerTile from "ol/layer/Tile";
 import {fromLonLat} from "ol/proj";
 import {XYZ} from "ol/source";
 
+import classes from './PublicMap.module.css'
 
 class PublicMap extends Component {
   constructor(props) {
     super(props);
 
+    //const map_types = [{"pixelkarte-farbe"}, {"pixelkarte-farbe-winter"}, {"swissimage"}, {"SWISSTLM3D_EISENBAHNNETZ"}, {"SEGELFLUGKARTE"}, {"SPERR_GEFAHRENZONENKARTE"}, {"HIKS_DUFOR"}, {"HIKS_SIEGFRIED"}]
 
-    this.state = {center: [8.733389, 47.500], zoom: 16};
+    this.getMap("swissimage")
+  }
+
+  getMap(map_type) {
+    this.state = {center: [8.733389, 47.5006875], zoom: 16};
 
     this.olmap = new OlMap({
-      target: null,
+      target: "map",
       loadTilesWhileAnimating: true,
       layers: [
         new OlLayerTile({
           source: new XYZ({
-            url: 'https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.swissimage/default/current/3857/{z}/{x}/{y}.jpeg'
+            url: 'https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.' + map_type + '/default/current/3857/{z}/{x}/{y}.jpeg'
+            
           })
         })
       ],
@@ -60,8 +67,8 @@ class PublicMap extends Component {
   render() {
     this.updateMap(); // Update map on render?
     return (
-      <div id="map" style={{ width: "100%", height: "360px" }}>
-        <button onClick={e => this.userAction()}>Jump back</button>
+      <div id="map" className={classes.displayMap}>
+       
       </div>
     );
   }
