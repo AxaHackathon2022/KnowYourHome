@@ -1,60 +1,60 @@
-import React, {Component, useEffect, useState} from "react";
+import React, { Component, useEffect, useState } from "react";
 import OlMap from "ol/Map";
 import OlView from "ol/View";
 import OlLayerTile from "ol/layer/Tile";
-import {fromLonLat} from "ol/proj";
-import {XYZ} from "ol/source";
-import classes from './PublicMap.module.css'
+import { fromLonLat, toLonLat } from "ol/proj";
+import { XYZ } from "ol/source";
+import classes from './MapFeature.module.css'
 import Card from "../UI/Card";
 
 
 function MapFeature(props) {
-    const [locationObject, setLocationObject] = useState({});
-    let olmap;
+    const [locationObject, setLocationObject] = useState({ center: [8.7345075, 47.5004427], zoom: 16 });
+    const [olmap, setOlmap] = useState(new OlMap({
+        target: null,
+        loadTilesWhileAnimating: true,
+        layers: [
+            new OlLayerTile({
+                source: new XYZ({
+                    url: 'https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/{z}/{x}/{y}.jpeg'
+                })
+            }),
+        ],
+        controls: [],
+        view: new OlView({
+            center: fromLonLat([8.7345075, 47.5004427]),
+            zoom: 16
+        })
+    }));
 
     useEffect(() => {
-        setLocationObject({center: [props.posLng, props.posLat], zoom: 16});
-        if (olmap) {
-            updateMap();
-        }
-
+        setLocationObject({ center: [props.posLng, props.posLat], zoom: 16 });
     }, [props.posLng, props.posLat])
 
     useEffect(() => {
-        olmap = new OlMap({
-            target: null,
-            loadTilesWhileAnimating: true,
-            layers: [
-                new OlLayerTile({
-                    source: new XYZ({
-                        url: 'https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/{z}/{x}/{y}.jpeg'
-                    })
-                }),
-            ],
-            controls: [],
-            view: new OlView({
-                center: fromLonLat([props.posLng, props.posLat]),
-                zoom: 16
-            })
-        });
-    }, []);
+        if (olmap) {
+            updateMap();
+            console.log(locationObject);
+        }
+    }, [locationObject])
+
+
 
 
     function updateMap() {
         olmap.getView().setCenter(fromLonLat(locationObject.center));
         olmap.getView().setZoom(locationObject.zoom);
-    }
+        // }
 
-    function componentDidMount() {
+        // function componentDidMount() {
         olmap.setTarget("map");
 
         // Listen to map changes
-        olmap.on("moveend", () => {
-            let center = olmap.getView().getCenter();
-            let zoom = olmap.getView().getZoom();
-            setLocationObject({center, zoom});
-
-        });
+        // olmap.on("moveend", () => {
+        //     let center = olmap.getView().getCenter();
+        //     let zoom = olmap.getView().getZoom();
+        //     setLocationObject({ center: toLonLat(center), zoom: zoom });
+        // });
     }
 
     function shouldComponentUpdate(nextProps, nextState) {
@@ -65,7 +65,7 @@ function MapFeature(props) {
     }
 
     function userAction() {
-        setLocationObject({center: [this.props.posLng, this.props.posLat], zoom: 16});
+        setLocationObject({ center: [props.posLng, props.posLat], zoom: 16 });
     }
 
     function addOneRemoveOther(layerName) {
@@ -84,14 +84,14 @@ function MapFeature(props) {
                 </button>
                 <button className={classes.button} onClick={e => addOneRemoveOther("swissimage")}>Satellit</button>
                 <button className={classes.button}
-                        onClick={e => addOneRemoveOther("pixelkarte-farbe-winter")}>Strassenkarte hell
+                    onClick={e => addOneRemoveOther("pixelkarte-farbe-winter")}>Strassenkarte hell
                 </button>
                 <button className={classes.button} onClick={e => addOneRemoveOther("pixelkarte-grau")}>Strassenkarte
                     grau
                 </button>
             </div>
             <button className={classes.button} onClick={e => userAction()}>Neu zentrieren</button>
-            <div id="map" className={classes.displayMap}/>
+            <div id="map" className={classes.displayMap} />
 
         </Card>
     );

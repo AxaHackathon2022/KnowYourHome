@@ -12,13 +12,13 @@ function SearchFeature(props) {
       const str = inputValue.split(' ').join('+');
       const response = await fetch(`https://maps.google.com/maps/api/geocode/json?address=${str}&key=AIzaSyCzSfrU0mR4BDwWARDNFZaSugM5bzVhdjU`);
       const fetchedResponse = await response.json(response);
-      console.log(fetchedResponse);
+      // console.log(fetchedResponse);
       setLocationObject(fetchedResponse.results);
     };
   };
 
   useEffect(() => {
-    console.log(locationObject);
+    // console.log(locationObject);
     if (locationObject && locationObject.length === 1) {
       const resultAddress = locationObject[0];
       props.onSearchLocation(resultAddress.formatted_address, resultAddress.geometry.location.lat, resultAddress.geometry.location.lng);
