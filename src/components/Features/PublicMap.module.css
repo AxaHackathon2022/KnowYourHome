@@ -1,11 +1,11 @@
-.displayMap {
-    align-content: center;
-    width: 80%;
-    height: 500px;
-}
-
 .buttons {
     align-content: center;
     width: 100%;
+    height: 30px;
+}
+
+.displayMap {
+    margin: auto;
+    width: 80%;
     height: 550px;
 }

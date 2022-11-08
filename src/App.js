@@ -25,9 +25,7 @@ function App() {
         <DisplayAddressFeature 
           currentLocation={searchLocation}
         />
-        <Card>
           <MyMap posLng={searchLocation.lon} posLat={searchLocation.lat}/>
-        </Card>
       </div>
     </div>
   );

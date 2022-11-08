@@ -5,6 +5,7 @@ import OlLayerTile from "ol/layer/Tile";
 import {fromLonLat} from "ol/proj";
 import {XYZ} from "ol/source";
 import classes from './PublicMap.module.css'
+import Card from "../UI/Card";
 
 
 class PublicMap extends Component {
@@ -70,16 +71,20 @@ class PublicMap extends Component {
     render() {
         this.updateMap(); // Update map on render?
         return (
-            <div className={classes.buttons}> 
-                <button onClick={e => this.addOneRemoveOther("pixelkarte-farbe")}>Karte</button>
-                <button onClick={e => this.addOneRemoveOther("swissimage")}>Satellit</button>
-                <button onClick={e => this.addOneRemoveOther("pixelkarte-farbe-winter")}>pixelkarte-farbe-winter</button>
-                <button onClick={e => this.addOneRemoveOther("pixelkarte-grau")}>pixelkarte-grau</button>
+            <Card>
+                <div className={classes.buttons}>
+                    <button onClick={e => this.addOneRemoveOther("pixelkarte-farbe")}>Karte</button>
+                    <button onClick={e => this.addOneRemoveOther("swissimage")}>Satellit</button>
+                    <button onClick={e => this.addOneRemoveOther("pixelkarte-farbe-winter")}>pixelkarte-farbe-winter
+                    </button>
+                    <button onClick={e => this.addOneRemoveOther("pixelkarte-grau")}>pixelkarte-grau</button>
+                </div>
                 <div id="map" className={classes.displayMap}>
                     <button onClick={e => this.userAction()}>Jump back</button>
                 </div>
-            </div>
-        );
+            </Card>
+    )
+        ;
     }
 }
 
