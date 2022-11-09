@@ -3,6 +3,7 @@ import classes from "./SearchFeature.module.css";
 import Card from "../UI/Card";
 import Button from "../UI/Button";
 
+
 function SearchFeature(props) {
   const addressInputRef = useRef();
   const [locationObject, setLocationObject] = useState({});
@@ -23,7 +24,7 @@ function SearchFeature(props) {
     if (egid) {
       const response = await fetch('https://api3.geo.admin.ch/rest/services/api/MapServer/find?layer=ch.bfs.gebaeude_wohnungs_register&searchText='+egid+'&searchField=egid&returnGeometry=false&contains=false')
       const fetchedResponse = await response.json(response);
-      console.log(fetchedResponse);
+      //console.log(fetchedResponse);
       setBuildingInformationObject(fetchedResponse.results);
     }
   }
@@ -33,8 +34,10 @@ function SearchFeature(props) {
     if (locationObject && locationObject.length === 1) {
       const resultAddress = locationObject[0];
       props.onSearchLocation(resultAddress.formatted_address, resultAddress.geometry.location.lat, resultAddress.geometry.location.lng);
-      props.onBuildingInformationChange(buildingInformationObject);
     };
+    if (buildingInformationObject && buildingInformationObject.length === 1 && buildingInformationObject[0].attributes) {
+      props.onBuildingInformationChange(buildingInformationObject[0].attributes);
+    }
 
   }, [locationObject, buildingInformationObject]);
 
