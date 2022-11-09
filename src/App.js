@@ -7,9 +7,16 @@ import MapFeature from "./components/Features/MapFeature";
 
 function App() {
   const [searchLocation, setSearchLocation] = useState({});
+  const [buildingInformation, setBuildingInformation] = useState({});
+  
 
   const searchLocationHandler = (paramAddress, paramLat, paramLon) => {
     setSearchLocation({ address: paramAddress, lat: paramLat, lon: paramLon });
+  };
+
+  
+  const buildingInformationHandler = (buildingInformationSource) => {
+    setBuildingInformation( buildingInformationSource );
   };
 
   return (

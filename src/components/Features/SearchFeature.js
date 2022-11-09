@@ -6,6 +6,7 @@ import Button from "../UI/Button";
 function SearchFeature(props) {
   const addressInputRef = useRef();
   const [locationObject, setLocationObject] = useState({});
+  const [buildingInformationObject, setBuildingInformationObject] = useState({});
 
   async function fetchAddress(inputValue) {
     if (inputValue) {
@@ -18,11 +19,12 @@ function SearchFeature(props) {
   };
 
   async function fetchBuildingInformation(inputValue) {
-    inputValue = 2323872;
-    if (inputValue) {
+    let egid = inputValue;
+    if (egid) {
       const response = await fetch('https://api3.geo.admin.ch/rest/services/api/MapServer/find?layer=ch.bfs.gebaeude_wohnungs_register&searchText='+egid+'&searchField=egid&returnGeometry=false&contains=false')
       const fetchedResponse = await response.json(response);
       console.log(fetchedResponse);
+      setBuildingInformationObject(fetchedResponse.results);
     }
   }
 
@@ -31,14 +33,15 @@ function SearchFeature(props) {
     if (locationObject && locationObject.length === 1) {
       const resultAddress = locationObject[0];
       props.onSearchLocation(resultAddress.formatted_address, resultAddress.geometry.location.lat, resultAddress.geometry.location.lng);
+      props.onBuildingInformationChange(buildingInformationObject);
     };
 
-  }, [locationObject]);
+  }, [locationObject, buildingInformationObject]);
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
-    //fetchAddress(addressInputRef.current.value);
-    fetchBuildingInformation
+    fetchAddress(addressInputRef.current.value);
+    fetchBuildingInformation(2323872);
   };
 
   return (
