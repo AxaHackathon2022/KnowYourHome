@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f50d2f9-61ba-4d52-9e79-57ba1325bfa6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/KnowYourHome.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="7f50d2f9-61ba-4d52-9e79-57ba1325bfa6" name="Changes" comment="links">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Features/DisplayAddressFeature.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Features/DisplayAddressFeature.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Features/SearchFeature.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Features/SearchFeature.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,13 +31,26 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/boeby/IdeaProjects/KnowYourHome",
+    "last_opened_file_path": "C:/Users/boeby/IdeaProjects/KnowYourHome/src/components/Features",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.side.proportion": "0.0",
+    "ts.external.directory.path": "C:\\Users\\boeby\\AppData\\Local\\JetBrains\\Toolbox\\apps\\IDEA-U\\ch-0\\222.4345.14\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "XML"
+    ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\boeby\IdeaProjects\KnowYourHome\src\components\Features" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration default="true" type="DjangoTestsConfigurationType">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -153,10 +167,82 @@
       <option name="presentableId" value="Default" />
       <updated>1667412750550</updated>
       <workItem from="1667412751881" duration="89000" />
+      <workItem from="1667977739384" duration="4838000" />
     </task>
+    <task id="LOCAL-00001" summary="map switch">
+      <created>1667915275942</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1667915275942</updated>
+    </task>
+    <task id="LOCAL-00002" summary="adapted Readme">
+      <created>1667916210738</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1667916210738</updated>
+    </task>
+    <task id="LOCAL-00003" summary=" merge">
+      <created>1667917355788</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1667917355788</updated>
+    </task>
+    <task id="LOCAL-00004" summary="provide coordinates from App.js">
+      <created>1667919778734</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1667919778734</updated>
+    </task>
+    <task id="LOCAL-00005" summary="disable controls">
+      <created>1667922639048</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1667922639048</updated>
+    </task>
+    <task id="LOCAL-00006" summary="change to card">
+      <created>1667923063772</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1667923063772</updated>
+    </task>
+    <task id="LOCAL-00007" summary="initial commit to rewrite function">
+      <created>1667927399255</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1667927399255</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="map switch" />
+    <MESSAGE value="adapted Readme" />
+    <MESSAGE value=" merge" />
+    <MESSAGE value="provide coordinates from App.js" />
+    <MESSAGE value="disable controls" />
+    <MESSAGE value="change to card" />
+    <MESSAGE value="initial commit to rewrite function" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial commit to rewrite function" />
   </component>
 </project>

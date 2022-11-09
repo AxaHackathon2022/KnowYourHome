@@ -10,19 +10,38 @@ function SearchFeature(props) {
   async function fetchAddress(inputValue) {
     if (inputValue) {
       const str = inputValue.split(' ').join('+');
-      const response = await fetch(`https://maps.google.com/maps/api/geocode/json?address=${str}&key=AIzaSyCzSfrU0mR4BDwWARDNFZaSugM5bzVhdjU`);
-      const fetchedResponse = await response.json(response);
-      // console.log(fetchedResponse);
+      const searchByAdressResponse = await fetch(`https://api3.geo.admin.ch/rest/services/ech/SearchServer?searchText=${str}&lang=de&type=locations`);
+      const fetchedResponse = await searchByAdressResponse.json();
       setLocationObject(fetchedResponse.results);
-    };
-  };
+    }
+  }
 
   useEffect(() => {
-    // console.log(locationObject);
+    function searchByFeature(featureId) {
+      console.log("Search By Feature Id: " + featureId)
+      var myHeaders = new Headers();
+      myHeaders.append("accept", "application/json, text/plain, */*");
+
+      var requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow'
+      };
+
+      fetch(`https://api3.geo.admin.ch/rest/services/ech/MapServer/ch.bfs.gebaeude_wohnungs_register/${featureId}?geometryFormat=geojson`, requestOptions)
+          .then(response => response.text())
+          .then(result => console.log("By FeatureId: " + result))
+          .catch(error => console.log('error', error));
+    }
+
     if (locationObject && locationObject.length === 1) {
-      const resultAddress = locationObject[0];
-      props.onSearchLocation(resultAddress.formatted_address, resultAddress.geometry.location.lat, resultAddress.geometry.location.lng);
-    };
+      const resultAddress = locationObject[0].attrs;
+      searchByFeature(resultAddress.featureId);
+      let label = resultAddress.label.replace("<b>", "").replace("</b>", "");
+      props.onSearchLocation(label, resultAddress.lat, resultAddress.lon, resultAddress.featureId, resultAddress.zoomLevel);
+    } else {
+
+    }
 
   }, [locationObject]);
 
