@@ -1,0 +1,7 @@
+.displayAddress p {
+    font: inherit;
+    color: inherit;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin: 0;
+}
