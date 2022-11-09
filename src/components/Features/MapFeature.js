@@ -38,17 +38,10 @@ function MapFeature(props) {
         }
     }, [locationObject])
 
-
-
-
     function updateMap() {
         olmap.getView().setCenter(fromLonLat(locationObject.center));
         olmap.getView().setZoom(locationObject.zoom);
-        // }
-
-        // function componentDidMount() {
         olmap.setTarget("map");
-
 
         const marker = new OlOverlay({
             position: fromLonLat(locationObject.center),
@@ -57,13 +50,6 @@ function MapFeature(props) {
             stopEvent: false,
           });
           olmap.addOverlay(marker);
-
-        // Listen to map changes
-        // olmap.on("moveend", () => {
-        //     let center = olmap.getView().getCenter();
-        //     let zoom = olmap.getView().getZoom();
-        //     setLocationObject({ center: toLonLat(center), zoom: zoom });
-        // });
     }
 
     function shouldComponentUpdate(nextProps, nextState) {
