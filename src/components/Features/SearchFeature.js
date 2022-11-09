@@ -18,18 +18,13 @@ function SearchFeature(props) {
   }
 
   useEffect(() => {
-    console.log("useEffect changed")
     if (locationObject && locationObject.length === 1) {
       const resultAddress = locationObject[0].attrs;
-      searchByFeatureId(resultAddress.featureId).then(r => {
-        console.log("egid: "+ r)
-        setEgid(r);
-      });
+      searchByFeatureId(resultAddress.featureId).then(r => setEgid(r));
     }
   }, [locationObject]);
 
   useEffect(() => {
-    console.log("useEffect for both changed")
     if (locationObject && egid && locationObject.length === 1) {
       const resultAddress = locationObject[0].attrs;
       let label = resultAddress.label.replace("<b>", "").replace("</b>", "");
@@ -38,7 +33,6 @@ function SearchFeature(props) {
 }, [locationObject, egid]);
 
   async function searchByFeatureId(featureId) {
-    console.log("Search By Feature Id: " + featureId)
     var myHeaders = new Headers();
     myHeaders.append("accept", "application/json, text/plain, */*");
 
