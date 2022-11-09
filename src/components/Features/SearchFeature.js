@@ -27,7 +27,7 @@ function SearchFeature(props) {
   }
 
   useEffect(() => {
-    if (locationObject && locationObject.length === 1) {
+    if (locationObject && locationObject.length) {
       const resultAddress = locationObject[0].attrs;
       searchByFeatureId(resultAddress.featureId).then(r => setEgid(r));
     }
@@ -41,7 +41,7 @@ function SearchFeature(props) {
 
 
   useEffect(() => {
-    if (locationObject && egid && locationObject.length === 1 && egid.length) {
+    if (locationObject && egid && locationObject.length && egid.length) {
       fetchBuildingInformation(egid);
       const resultAddress = locationObject[0].attrs;
       let label = resultAddress.label.replace("<b>", "").replace("</b>", "");
