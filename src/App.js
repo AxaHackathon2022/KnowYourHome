@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import Header from "./components/Header";
-import Card from "./components/UI/Card";
 import SearchFeature from "./components/Features/SearchFeature";
 import DisplayAddressFeature from "./components/Features/DisplayAddressFeature";
-import MyMap from "./components/Features/PublicMap";
+import MapFeature from "./components/Features/MapFeature";
 
 function App() {
   const [searchLocation, setSearchLocation] = useState({});
@@ -25,7 +23,7 @@ function App() {
         <DisplayAddressFeature 
           currentLocation={searchLocation}
         />
-          <MyMap posLng={searchLocation.lon} posLat={searchLocation.lat}/>
+          <MapFeature posLng={searchLocation.lon} posLat={searchLocation.lat}/>
       </div>
     </div>
   );
