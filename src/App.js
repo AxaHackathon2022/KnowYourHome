@@ -8,8 +8,8 @@ import MapFeature from "./components/Features/MapFeature";
 function App() {
   const [searchLocation, setSearchLocation] = useState({});
 
-  const searchLocationHandler = (paramAddress, paramLat, paramLon, paramFeatureId, paramZoomLevel) => {
-    setSearchLocation({ address: paramAddress, lat: paramLat, lon: paramLon, featureId: paramFeatureId, zoomLevel: paramZoomLevel});
+  const searchLocationHandler = (paramAddress, paramLat, paramLon, paramFeatureId, paramZoomLevel, paramEgid) => {
+    setSearchLocation({ address: paramAddress, lat: paramLat, lon: paramLon, featureId: paramFeatureId, zoomLevel: paramZoomLevel, egid: paramEgid});
   };
 
   return (
