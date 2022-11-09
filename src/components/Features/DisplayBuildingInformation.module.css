@@ -3,3 +3,8 @@
     justify-content: center;
     margin: 0;
 }
+
+.displayBuildingInformation h3 {
+    margin-top: 0.5rem;
+    margin-bottom: 1.2rem;
+}

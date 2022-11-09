@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import SearchFeature from "./components/Features/SearchFeature";
-import DisplayAddressFeature from "./components/Features/DisplayAddressFeature";
 import MapFeature from "./components/Features/MapFeature";
 import DisplayBuildingInformationFeature from "./components/Features/DisplayBuildingInformationFeature";
 
@@ -10,17 +9,17 @@ import DisplayBuildingInformationFeature from "./components/Features/DisplayBuil
 function App() {
   const [searchLocation, setSearchLocation] = useState({});
   const [buildingInformation, setBuildingInformation] = useState({});
-  
+
 
   const searchLocationHandler = (paramAddress, paramLat, paramLon) => {
     setSearchLocation({ address: paramAddress, lat: paramLat, lon: paramLon });
   };
 
-  
+
   const buildingInformationHandler = (buildingInformationSource) => {
     console.log("handler: ");
     console.log(buildingInformationSource);
-    setBuildingInformation( buildingInformationSource );
+    setBuildingInformation(buildingInformationSource);
   };
 
   return (
@@ -32,11 +31,10 @@ function App() {
           onSearchLocation={searchLocationHandler}
           onBuildingInformationChange={buildingInformationHandler}
         />
-        <DisplayAddressFeature 
+        <DisplayBuildingInformationFeature
           currentLocation={searchLocation}
-        />
-        <DisplayBuildingInformationFeature currentBuildingInformation={buildingInformation}/>
-        <MapFeature posLng={searchLocation.lon} posLat={searchLocation.lat}/>
+          currentBuildingInformation={buildingInformation} />
+        <MapFeature posLng={searchLocation.lon} posLat={searchLocation.lat} />
       </div>
     </div>
   );
