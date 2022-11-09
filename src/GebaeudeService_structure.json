@@ -1,0 +1,1140 @@
+{
+    "id": "ch.bfs.gebaeude_wohnungs_register",
+    "name": "Geb\u00e4ude- und Wohnungsregister",
+    "fields": [
+        {
+            "name": "gwaerzw1",
+            "type": "SMALLINT",
+            "alias": "W\u00e4rmeerzeuger Warmwasser 1",
+            "values": [
+                null,
+                7610,
+                7630,
+                7620,
+                7650
+            ]
+        },
+        {
+            "name": "lparz",
+            "type": "VARCHAR",
+            "alias": "Grundst\u00fccksnummer",
+            "values": [
+                "2232",
+                "40",
+                "717",
+                "724",
+                "9347"
+            ]
+        },
+        {
+            "name": "dkode",
+            "type": "FLOAT",
+            "alias": "E-Geb\u00e4udeeingangskoordinate",
+            "values": [
+                2504249.505,
+                2577795.457,
+                2616925.658,
+                2666730.385,
+                2712363.38
+            ]
+        },
+        {
+            "name": "gebnr",
+            "type": "VARCHAR",
+            "alias": "Amtliche Geb\u00e4udenummer",
+            "values": [
+                "",
+                "371",
+                "508a",
+                "5684",
+                "717a"
+            ]
+        },
+        {
+            "name": "wbez",
+            "type": "VARCHAR",
+            "alias": "Lage auf dem Stockwerk",
+            "values": [
+                null,
+                [
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                [
+                    null
+                ],
+                [
+                    null,
+                    null
+                ],
+                [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ]
+            ]
+        },
+        {
+            "name": "dkodn",
+            "type": "FLOAT",
+            "alias": "N-Geb\u00e4udeeingangskoordinate",
+            "values": [
+                1095104.04,
+                1121495.867,
+                1180655.812,
+                1185104.35,
+                1220332.501
+            ]
+        },
+        {
+            "name": "stroffiziel",
+            "type": "VARCHAR",
+            "alias": "Strassenbezeichnung offiziell",
+            "values": [
+                "",
+                "1"
+            ]
+        },
+        {
+            "name": "gvolnorm",
+            "type": "SMALLINT",
+            "alias": "Geb\u00e4udevolumen: Norm",
+            "values": [
+                null,
+                969,
+                962
+            ]
+        },
+        {
+            "name": "wkche",
+            "type": "SMALLINT",
+            "alias": "Kocheinrichtung",
+            "values": [
+                null,
+                [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                [
+                    1
+                ],
+                [
+                    1,
+                    1
+                ],
+                [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "strnamk",
+            "type": "VARCHAR",
+            "alias": "Kurztext Strasse",
+            "values": [
+                [
+                    "Ch. Neuf-de-V\u00e9senaz"
+                ],
+                [
+                    "Chilchweg"
+                ],
+                [
+                    "Hubenfeld"
+                ],
+                [
+                    "Rte Ancienne-Papeterie"
+                ],
+                [
+                    "Via Bal\u00e0"
+                ]
+            ]
+        },
+        {
+            "name": "gwaerdatw2",
+            "type": "DATETIME",
+            "alias": "Aktualisierungsdatum Warmwasser 2",
+            "values": [
+                "-",
+                "19.10.2022",
+                "19.12.2015",
+                "20.01.2021",
+                "29.11.2001"
+            ]
+        },
+        {
+            "name": "wazim",
+            "type": "SMALLINT",
+            "alias": "Anzahl Zimmer",
+            "values": [
+                null,
+                [
+                    4,
+                    4,
+                    4,
+                    5
+                ],
+                [
+                    6
+                ],
+                [
+                    4
+                ],
+                [
+                    3,
+                    6
+                ]
+            ]
+        },
+        {
+            "name": "gdekt",
+            "type": "VARCHAR",
+            "alias": "Kantonsk\u00fcrzel",
+            "values": [
+                "BE",
+                "FR",
+                "GE",
+                "LU",
+                "TI"
+            ]
+        },
+        {
+            "name": "wstwk",
+            "type": "SMALLINT",
+            "alias": "Stockwerk",
+            "values": [
+                null,
+                [
+                    3101,
+                    3102,
+                    3103,
+                    3104
+                ],
+                [
+                    3100
+                ],
+                [
+                    3100,
+                    3101
+                ],
+                [
+                    3100,
+                    3100
+                ]
+            ]
+        },
+        {
+            "name": "gwaerzh1",
+            "type": "SMALLINT",
+            "alias": "W\u00e4rmeerzeuger Heizung 1",
+            "values": [
+                null,
+                7410,
+                7430,
+                7434,
+                7450
+            ]
+        },
+        {
+            "name": "wstat",
+            "type": "SMALLINT",
+            "alias": "Wohnungsstatus",
+            "values": [
+                null,
+                [
+                    3004,
+                    3004,
+                    3004,
+                    3004
+                ],
+                [
+                    3004
+                ],
+                [
+                    3004,
+                    3004
+                ],
+                [
+                    3004,
+                    3004,
+                    3004,
+                    3004,
+                    3004,
+                    3004
+                ]
+            ]
+        },
+        {
+            "name": "egid",
+            "type": "VARCHAR",
+            "alias": "Eidg. Geb\u00e4udeidentifikator (EGID)",
+            "values": [
+                "1423188",
+                "190148828",
+                "196359",
+                "295111549",
+                "502186747"
+            ]
+        },
+        {
+            "name": "ewid",
+            "type": "SMALLINT",
+            "alias": "Eidg. Wohnungsidentifikator (EWID)",
+            "values": [
+                null,
+                [
+                    "5",
+                    "7",
+                    "8",
+                    "10"
+                ],
+                [
+                    "1"
+                ],
+                [
+                    "1",
+                    "2"
+                ],
+                [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6"
+                ]
+            ]
+        },
+        {
+            "name": "dexpdat",
+            "type": "DATETIME",
+            "alias": "Datenstand",
+            "values": [
+                "07.11.2022"
+            ]
+        },
+        {
+            "name": "gwaerdatw1",
+            "type": "DATETIME",
+            "alias": "Aktualisierungsdatum Warmwasser 1",
+            "values": [
+                "-",
+                "01.01.2013",
+                "01.04.2009",
+                "08.02.2008",
+                "29.11.2001"
+            ]
+        },
+        {
+            "name": "lparzsx",
+            "type": "BIGINT",
+            "alias": "Suffix der Grundst\u00fccksnummer",
+            "values": [
+                null
+            ]
+        },
+        {
+            "name": "gwaerdath2",
+            "type": "DATETIME",
+            "alias": "Aktualisierungsdatum Heizung 2",
+            "values": [
+                "-",
+                "16.07.2018",
+                "19.10.2022",
+                "29.03.2021",
+                "29.11.2001"
+            ]
+        },
+        {
+            "name": "ganzwhg",
+            "type": "SMALLINT",
+            "alias": "Anzahl Wohnungen",
+            "values": [
+                null,
+                9,
+                1,
+                2,
+                5
+            ]
+        },
+        {
+            "name": "edid",
+            "type": "SMALLINT",
+            "alias": "Eidg. Eingangsidentifikator (EDID)",
+            "values": [
+                "0",
+                "1",
+                "4"
+            ]
+        },
+        {
+            "name": "gbaum",
+            "type": "SMALLINT",
+            "alias": "Baumonat des Geb\u00e4udes",
+            "values": [
+                null,
+                3,
+                1,
+                12,
+                6
+            ]
+        },
+        {
+            "name": "dplzz",
+            "type": "SMALLINT",
+            "alias": "Postleitzahl-Zusatzziffer",
+            "values": [
+                0,
+                2,
+                5
+            ]
+        },
+        {
+            "name": "wabbj",
+            "type": "SMALLINT",
+            "alias": "Abbruchjahr Wohnung",
+            "values": [
+                null,
+                [
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                [
+                    null
+                ],
+                [
+                    null,
+                    null
+                ],
+                [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ]
+            ]
+        },
+        {
+            "name": "strindx",
+            "type": "VARCHAR",
+            "alias": "Indexzeichen Strasse",
+            "values": [
+                [
+                    "Bal"
+                ],
+                [
+                    "Chi"
+                ],
+                [
+                    "Hub"
+                ],
+                [
+                    "Neu"
+                ],
+                [
+                    "Pap"
+                ]
+            ]
+        },
+        {
+            "name": "gazzi",
+            "type": "SMALLINT",
+            "alias": "Anzahl separate Wohnr\u00e4ume",
+            "values": [
+                null,
+                1
+            ]
+        },
+        {
+            "name": "dplz4",
+            "type": "SMALLINT",
+            "alias": "Postleitzahl",
+            "values": [
+                1222,
+                1723,
+                3615,
+                6274,
+                6992
+            ]
+        },
+        {
+            "name": "gbez",
+            "type": "VARCHAR",
+            "alias": "Name des Geb\u00e4udes",
+            "values": [
+                "",
+                "Fabbricato rurale",
+                "Stall",
+                "Wohnhaus",
+                "Zweifamilienhaus"
+            ]
+        },
+        {
+            "name": "dplzname",
+            "type": "VARCHAR",
+            "alias": "Ortschaft",
+            "values": [
+                "Eschenbach LU",
+                "Heimenschwand",
+                "Marly",
+                "Vernate",
+                "V\u00e9senaz"
+            ]
+        },
+        {
+            "name": "ltyp",
+            "type": "SMALLINT",
+            "alias": "Typ des Grundst\u00fccks",
+            "values": [
+                null
+            ]
+        },
+        {
+            "name": "gwaersceh2",
+            "type": "SMALLINT",
+            "alias": "Informationsquelle Heizung 2",
+            "values": [
+                null,
+                864,
+                858,
+                860,
+                855
+            ]
+        },
+        {
+            "name": "gbaup",
+            "type": "SMALLINT",
+            "alias": "Bauperiode",
+            "values": [
+                8012,
+                8014,
+                8015,
+                8021,
+                8022
+            ]
+        },
+        {
+            "name": "genw2",
+            "type": "SMALLINT",
+            "alias": "Energie-/W\u00e4rmequelle Warmwasser  2",
+            "values": [
+                null,
+                7500,
+                7570,
+                7560
+            ]
+        },
+        {
+            "name": "gwaersceh1",
+            "type": "SMALLINT",
+            "alias": "Informationsquelle Heizung 1",
+            "values": [
+                null,
+                869,
+                860,
+                855,
+                864
+            ]
+        },
+        {
+            "name": "garea",
+            "type": "INTEGER",
+            "alias": "Geb\u00e4udefl\u00e4che [m2]",
+            "values": [
+                105,
+                147,
+                337,
+                644,
+                1089
+            ]
+        },
+        {
+            "name": "weinr",
+            "type": "VARCHAR",
+            "alias": "Physische Wohnungsnummer",
+            "values": [
+                null,
+                [
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                [
+                    null
+                ],
+                [
+                    null,
+                    null
+                ],
+                [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ]
+            ]
+        },
+        {
+            "name": "egaid",
+            "type": "INTEGER",
+            "alias": "Eidg. Geb\u00e4udeadressidentifikator (EGAID)",
+            "values": [
+                100887897,
+                101567417,
+                101873895,
+                101923388,
+                103160996
+            ]
+        },
+        {
+            "name": "id",
+            "type": "VARCHAR",
+            "alias": "ch.bfs.gebaeude_wohnungs_register.id",
+            "values": [
+                "1423188_0",
+                "190148828_1",
+                "196359_0",
+                "295111549_1",
+                "502186747_0"
+            ]
+        },
+        {
+            "name": "wbauj",
+            "type": "SMALLINT",
+            "alias": "Baujahr Wohnung",
+            "values": [
+                null,
+                [
+                    2014,
+                    2014,
+                    2014,
+                    2014
+                ],
+                [
+                    1999
+                ],
+                [
+                    2007,
+                    2007
+                ],
+                [
+                    1999,
+                    1999
+                ]
+            ]
+        },
+        {
+            "name": "gschutzr",
+            "type": "SMALLINT",
+            "alias": "Zivilschutzraum",
+            "values": [
+                null,
+                1,
+                0
+            ]
+        },
+        {
+            "name": "plz_plz6",
+            "type": "VARCHAR",
+            "alias": "PLZ/PLZ6",
+            "values": [
+                "1222/122200",
+                "1723/172300",
+                "3615/361500",
+                "6274/627400",
+                "6992/699200"
+            ]
+        },
+        {
+            "name": "wexpdat",
+            "type": "DATETIME",
+            "alias": "Datenstand",
+            "values": [
+                null,
+                [
+                    "2022-11-07T00:00:00",
+                    "2022-11-07T00:00:00",
+                    "2022-11-07T00:00:00",
+                    "2022-11-07T00:00:00"
+                ],
+                [
+                    "2022-11-07T00:00:00"
+                ],
+                [
+                    "2022-11-07T00:00:00",
+                    "2022-11-07T00:00:00"
+                ],
+                [
+                    "2022-11-07T00:00:00",
+                    "2022-11-07T00:00:00",
+                    "2022-11-07T00:00:00",
+                    "2022-11-07T00:00:00",
+                    "2022-11-07T00:00:00",
+                    "2022-11-07T00:00:00"
+                ]
+            ]
+        },
+        {
+            "name": "gbauj",
+            "type": "SMALLINT",
+            "alias": "Baujahr des Geb\u00e4udes",
+            "values": [
+                null,
+                2014,
+                2008,
+                1961,
+                2007
+            ]
+        },
+        {
+            "name": "genh2",
+            "type": "SMALLINT",
+            "alias": "Energie-/W\u00e4rmequelle Heizung 2",
+            "values": [
+                null,
+                7500,
+                7570,
+                7598
+            ]
+        },
+        {
+            "name": "gwaerdath1",
+            "type": "DATETIME",
+            "alias": "Aktualisierungsdatum Heizung 1",
+            "values": [
+                "-",
+                "01.04.2009",
+                "08.02.2008",
+                "16.01.2020",
+                "29.11.2001"
+            ]
+        },
+        {
+            "name": "wmehrg",
+            "type": "SMALLINT",
+            "alias": "Mehrgeschossige Wohnung",
+            "values": [
+                null,
+                [
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    1
+                ],
+                [
+                    0,
+                    1
+                ],
+                [
+                    1,
+                    0
+                ]
+            ]
+        },
+        {
+            "name": "strname",
+            "type": "VARCHAR",
+            "alias": "Strassenbezeichnung",
+            "values": [
+                [
+                    "Chemin Neuf-de-V\u00e9senaz"
+                ],
+                [
+                    "Chilchweg"
+                ],
+                [
+                    "Hubenfeld"
+                ],
+                [
+                    "Route de l'Ancienne-Papeterie"
+                ],
+                [
+                    "Via Bal\u00e0"
+                ]
+            ]
+        },
+        {
+            "name": "gexpdat",
+            "type": "DATETIME",
+            "alias": "Publikationsstand",
+            "values": [
+                "07.11.2022"
+            ]
+        },
+        {
+            "name": "gwaerzh2",
+            "type": "SMALLINT",
+            "alias": "W\u00e4rmeerzeuger Heizung 2",
+            "values": [
+                null,
+                7400,
+                7420,
+                7410
+            ]
+        },
+        {
+            "name": "strsp",
+            "type": "VARCHAR",
+            "alias": "Sprache des Strassennamen",
+            "values": [
+                [
+                    "DE"
+                ],
+                [
+                    "FR"
+                ],
+                [
+                    "FR",
+                    "DE"
+                ],
+                [
+                    "IT"
+                ],
+                [
+                    "RO"
+                ]
+            ]
+        },
+        {
+            "name": "strname_deinr",
+            "type": "VARCHAR",
+            "alias": "Strasse Nr",
+            "values": [
+                "Chemin Neuf-de-V\u00e9senaz 8",
+                "Chilchweg 4",
+                "Hubenfeld 8",
+                "Route de l'Ancienne-Papeterie 150",
+                "Via Bal\u00e0 9"
+            ]
+        },
+        {
+            "name": "gwaerscew2",
+            "type": "SMALLINT",
+            "alias": "Informationsquelle Warmwasser 2",
+            "values": [
+                null,
+                860,
+                864,
+                858,
+                869
+            ]
+        },
+        {
+            "name": "gksce",
+            "type": "SMALLINT",
+            "alias": "Koordinatenherkunft",
+            "values": [
+                901,
+                905,
+                909
+            ]
+        },
+        {
+            "name": "gwaerzw2",
+            "type": "SMALLINT",
+            "alias": "W\u00e4rmeerzeuger Warmwasser 2",
+            "values": [
+                null,
+                7600,
+                7620,
+                7650
+            ]
+        },
+        {
+            "name": "gwaerscew1",
+            "type": "SMALLINT",
+            "alias": "Informationsquelle Warmwasser 1",
+            "values": [
+                null,
+                869,
+                860,
+                864,
+                855
+            ]
+        },
+        {
+            "name": "esid",
+            "type": "INTEGER",
+            "alias": "Eidg. Strassenidentifikator (ESID)",
+            "values": [
+                10010536,
+                10015872,
+                10049043,
+                10126106,
+                10128485
+            ]
+        },
+        {
+            "name": "gstat",
+            "type": "SMALLINT",
+            "alias": "Geb\u00e4udestatus",
+            "values": [
+                1003,
+                1004
+            ]
+        },
+        {
+            "name": "gvol",
+            "type": "INTEGER",
+            "alias": "Geb\u00e4udevolumen [m3]",
+            "values": [
+                null,
+                1014,
+                1853,
+                2016,
+                174
+            ]
+        },
+        {
+            "name": "warea",
+            "type": "SMALLINT",
+            "alias": "Wohnungsfl\u00e4che [m2]",
+            "values": [
+                null,
+                [
+                    167,
+                    165,
+                    180,
+                    235
+                ],
+                [
+                    186
+                ],
+                [
+                    110
+                ],
+                [
+                    60,
+                    192
+                ]
+            ]
+        },
+        {
+            "name": "gastw",
+            "type": "SMALLINT",
+            "alias": "Anzahl Geschosse",
+            "values": [
+                null,
+                6,
+                2,
+                3,
+                1
+            ]
+        },
+        {
+            "name": "gklas",
+            "type": "SMALLINT",
+            "alias": "Geb\u00e4udeklasse",
+            "values": [
+                1110,
+                1121,
+                1122,
+                1251,
+                1263
+            ]
+        },
+        {
+            "name": "gkodn",
+            "type": "FLOAT",
+            "alias": "N-Geb\u00e4udekoordinate",
+            "values": [
+                1095104.04,
+                1121497.75,
+                1180656.28,
+                1185099.141,
+                1220327.038
+            ]
+        },
+        {
+            "name": "genh1",
+            "type": "SMALLINT",
+            "alias": "Energie-/W\u00e4rmequelle Heizung 1",
+            "values": [
+                null,
+                7598,
+                7530,
+                7541,
+                7520
+            ]
+        },
+        {
+            "name": "whgnr",
+            "type": "VARCHAR",
+            "alias": "Administrative WohnungsNr",
+            "values": [
+                null,
+                [
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                [
+                    "1"
+                ],
+                [
+                    null
+                ],
+                [
+                    "1",
+                    "2"
+                ]
+            ]
+        },
+        {
+            "name": "lgbkr",
+            "type": "SMALLINT",
+            "alias": "Grundbuchkreisnummer",
+            "values": [
+                0,
+                16,
+                111,
+                306,
+                312
+            ]
+        },
+        {
+            "name": "gvolsce",
+            "type": "SMALLINT",
+            "alias": "Informationsquelle zum Geb\u00e4udevolumen",
+            "values": [
+                null,
+                859,
+                869
+            ]
+        },
+        {
+            "name": "genw1",
+            "type": "SMALLINT",
+            "alias": "Energie-/W\u00e4rmequelle Warmwasser 1",
+            "values": [
+                null,
+                7598,
+                7530,
+                7570,
+                7560
+            ]
+        },
+        {
+            "name": "gkode",
+            "type": "FLOAT",
+            "alias": "E-Geb\u00e4udekoordinate",
+            "values": [
+                2504255.75,
+                2577796.206,
+                2616929.382,
+                2666729.311,
+                2712363.38
+            ]
+        },
+        {
+            "name": "gabbj",
+            "type": "SMALLINT",
+            "alias": "Abbruchjahr des Geb\u00e4udes",
+            "values": [
+                null
+            ]
+        },
+        {
+            "name": "egrid",
+            "type": "VARCHAR",
+            "alias": "Eidg. Grundst\u00fccksidentifikator (EGRID)",
+            "values": [
+                "CH195081383516",
+                "CH253146073563",
+                "CH391091189466",
+                "CH761602073630",
+                "CH888965638289"
+            ]
+        },
+        {
+            "name": "gkat",
+            "type": "SMALLINT",
+            "alias": "Geb\u00e4udekategorie",
+            "values": [
+                1020,
+                1030,
+                1040,
+                1060
+            ]
+        },
+        {
+            "name": "ggdenr",
+            "type": "SMALLINT",
+            "alias": "BFS-Gemeindenummer",
+            "values": [
+                923,
+                1026,
+                2206,
+                5230,
+                6616
+            ]
+        },
+        {
+            "name": "doffadr",
+            "type": "SMALLINT",
+            "alias": "Offizielle Adresse",
+            "values": [
+                0,
+                1
+            ]
+        },
+        {
+            "name": "deinr",
+            "type": "VARCHAR",
+            "alias": "Eingangsnummer Geb\u00e4ude",
+            "values": [
+                "150",
+                "4",
+                "8",
+                "9",
+                "9d"
+            ]
+        },
+        {
+            "name": "ggdename",
+            "type": "VARCHAR",
+            "alias": "Gemeindename",
+            "values": [
+                "Buchholterberg",
+                "Collonge-Bellerive",
+                "Eschenbach (LU)",
+                "Marly",
+                "Vernate"
+            ]
+        },
+        {
+            "name": "gebf",
+            "type": "INTEGER",
+            "alias": "Energiebezugsfl\u00e4che",
+            "values": [
+                null,
+                148,
+                399,
+                5,
+                154
+            ]
+        }
+    ]
+}

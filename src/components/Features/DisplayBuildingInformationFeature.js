@@ -16,7 +16,7 @@ function DisplayBuildingInformationFeature(props) {
             <p className={classes.displayBuildingInformation}><b>Gebäudefläche:</b> {props.currentBuildingInformation.garea} &#13217;</p>
             <p className={classes.displayBuildingInformation}><b>Anzahl Geschosse:</b> {props.currentBuildingInformation.gastw}</p>
             <hr/><p><b>Wert:</b> CHF 1'200'000.00 </p>
-            <hr/><p><b>Hypothek:</b> CHF 800'000.00 </p>
+            <p><b>Hypothek:</b> CHF 800'000.00 </p>
             
         </Card>)
         
