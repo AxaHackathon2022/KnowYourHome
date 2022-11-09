@@ -50,16 +50,16 @@ function MapFeature(props) {
         // function componentDidMount() {
         olmap.setTarget("map");
 
-        
+
         const marker = new OlOverlay({
             position: fromLonLat(locationObject.center),
             positioning: 'center-center',
             element: document.getElementById('marker'),
             stopEvent: false,
-          });
-          console.log("Overlay");
-          console.log(marker);
-          olmap.addOverlay(marker);
+        });
+        console.log("Overlay");
+        console.log(marker);
+        olmap.addOverlay(marker);
 
         // Listen to map changes
         // olmap.on("moveend", () => {
@@ -90,21 +90,23 @@ function MapFeature(props) {
     }
 
     return (
-        <Card>
-            <div className={classes.buttonsDiv}>
-                <button className={classes.button} onClick={e => addOneRemoveOther("pixelkarte-farbe")}>Strassenkarte
-                </button>
-                <button className={classes.button} onClick={e => addOneRemoveOther("swissimage")}>Satellit</button>
-                <button className={classes.button}
-                    onClick={e => addOneRemoveOther("pixelkarte-farbe-winter")}>Strassenkarte hell
-                </button>
-                <button className={classes.button} onClick={e => addOneRemoveOther("pixelkarte-grau")}>Strassenkarte
-                    grau
-                </button>
-            </div>
-            <button className={classes.button} onClick={e => userAction()}>Neu zentrieren</button>
-            <div id="map" className={classes.displayMap} />
-            <div id="marker" className={classes.marker} title="Marker"></div>
+         <Card>
+            {(props.posLng && props.posLat) && (<div>
+                <div className={classes.buttonsDiv}>
+                    <button className={classes.button} onClick={e => addOneRemoveOther("pixelkarte-farbe")}>Strassenkarte
+                    </button>
+                    <button className={classes.button} onClick={e => addOneRemoveOther("swissimage")}>Satellit</button>
+                    <button className={classes.button}
+                        onClick={e => addOneRemoveOther("pixelkarte-farbe-winter")}>Strassenkarte hell
+                    </button>
+                    <button className={classes.button} onClick={e => addOneRemoveOther("pixelkarte-grau")}>Strassenkarte
+                        grau
+                    </button>
+                </div>
+                <button className={classes.button} onClick={e => userAction()}>Neu zentrieren</button>
+            </div>)}
+            <div id="map" className={classes.displayMap}/>
+            {(props.posLng && props.posLat) && (<div id="marker" className={classes.marker} title="Marker"></div>)}
         </Card>
     );
 }
