@@ -17,6 +17,15 @@ function SearchFeature(props) {
     };
   };
 
+  async function fetchBuildingInformation(inputValue) {
+    inputValue = 2323872;
+    if (inputValue) {
+      const response = await fetch('https://api3.geo.admin.ch/rest/services/api/MapServer/find?layer=ch.bfs.gebaeude_wohnungs_register&searchText='+egid+'&searchField=egid&returnGeometry=false&contains=false')
+      const fetchedResponse = await response.json(response);
+      console.log(fetchedResponse);
+    }
+  }
+
   useEffect(() => {
     console.log(locationObject);
     if (locationObject && locationObject.length === 1) {
@@ -28,7 +37,8 @@ function SearchFeature(props) {
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
-    fetchAddress(addressInputRef.current.value);
+    //fetchAddress(addressInputRef.current.value);
+    fetchBuildingInformation
   };
 
   return (
