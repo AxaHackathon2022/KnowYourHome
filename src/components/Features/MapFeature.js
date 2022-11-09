@@ -1,6 +1,7 @@
 import React, { Component, useEffect, useState } from "react";
 import OlMap from "ol/Map";
 import OlView from "ol/View";
+import OlOverlay from "ol/Overlay";
 import OlLayerTile from "ol/layer/Tile";
 import { fromLonLat, toLonLat } from "ol/proj";
 import { XYZ } from "ol/source";
@@ -49,6 +50,17 @@ function MapFeature(props) {
         // function componentDidMount() {
         olmap.setTarget("map");
 
+        
+        const marker = new OlOverlay({
+            position: fromLonLat(locationObject.center),
+            positioning: 'center-center',
+            element: document.getElementById('marker'),
+            stopEvent: false,
+          });
+          console.log("Overlay");
+          console.log(marker);
+          olmap.addOverlay(marker);
+
         // Listen to map changes
         // olmap.on("moveend", () => {
         //     let center = olmap.getView().getCenter();
@@ -92,7 +104,7 @@ function MapFeature(props) {
             </div>
             <button className={classes.button} onClick={e => userAction()}>Neu zentrieren</button>
             <div id="map" className={classes.displayMap} />
-
+            <div id="marker" className={classes.marker} title="Marker"></div>
         </Card>
     );
 }
