@@ -11,14 +11,12 @@ function App() {
   const [buildingInformation, setBuildingInformation] = useState({});
 
 
-  const searchLocationHandler = (paramAddress, paramLat, paramLon) => {
-    setSearchLocation({ address: paramAddress, lat: paramLat, lon: paramLon });
+  const searchLocationHandler = (paramAddress, paramLat, paramLon, paramFeatureId, paramZoomLevel, paramEgid) => {
+    setSearchLocation({ address: paramAddress, lat: paramLat, lon: paramLon, featureId: paramFeatureId, zoomLevel: paramZoomLevel, egid: paramEgid});
   };
 
 
   const buildingInformationHandler = (buildingInformationSource) => {
-    console.log("handler: ");
-    console.log(buildingInformationSource);
     setBuildingInformation(buildingInformationSource);
   };
 

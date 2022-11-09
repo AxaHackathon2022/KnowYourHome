@@ -35,7 +35,6 @@ function MapFeature(props) {
     useEffect(() => {
         if (olmap) {
             updateMap();
-            console.log(locationObject);
         }
     }, [locationObject])
 
@@ -56,10 +55,8 @@ function MapFeature(props) {
             positioning: 'center-center',
             element: document.getElementById('marker'),
             stopEvent: false,
-        });
-        console.log("Overlay");
-        console.log(marker);
-        olmap.addOverlay(marker);
+          });
+          olmap.addOverlay(marker);
 
         // Listen to map changes
         // olmap.on("moveend", () => {

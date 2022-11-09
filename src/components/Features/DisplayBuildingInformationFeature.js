@@ -4,7 +4,6 @@ import Card from "../UI/Card";
 import classes from './DisplayBuildingInformation.module.css'
 
 function DisplayBuildingInformationFeature(props) {
-    console.log(props.currentBuildingInformation);
      return (
         <>
         {(props.currentLocation.address || props.currentBuildingInformation.egid ) && (<Card className={classes.displayBuildingInformation}>
